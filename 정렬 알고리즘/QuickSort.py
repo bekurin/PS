@@ -1,3 +1,5 @@
+# 퀵 정렬 알고리즘
+# pivot값을 사용하여 분할 하여 정렬한다.
 array = [1,5,4,6,7,8,9,3,2,]
 
 def quickSort(array, start, end):
