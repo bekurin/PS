@@ -5,6 +5,7 @@ array = [1,5,4,6,7,8,9,3,2,]
 def MergeSort(array):
   if len(array) <= 1:
     return array
+  print(array)
   mid = len(array) // 2
   left = MergeSort(array[:mid])
   right = MergeSort(array[mid:])

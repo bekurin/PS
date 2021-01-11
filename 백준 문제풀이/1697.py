@@ -1,3 +1,4 @@
+# 1697번 숨바꼭질
 from collections import deque
 
 n, k = map(int, input().split())
@@ -12,6 +13,7 @@ def bfs():
     if nowPos == k:
       return array[nowPos]
     
+    # 현재값 -1, 현재값 +1, 현재값 * 2을 선택한다.
     for nextPos in (nowPos-1, nowPos+1, nowPos*2):
       if 0 <= nextPos < MAX and not array[nextPos]:
         array[nextPos] = array[nowPos] + 1
