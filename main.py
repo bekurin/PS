@@ -1,10 +1,27 @@
-# 순차 탐색 알고리즘(선형 탐색)
-def SequentialSearch(n, target, array):
-  for i in range(n):
-    if target == array[i]:
-      return i + 1
+t = int(input())
+m, n, k = map(int, input().split())
+adj = [[0] * m for _ in range(n)]
 
-array = [7,6,8,5,4,1,3,2]
-target = int(input())
+# 2차원 배열에 각 노드에 연결된 다른 노드의 정보를 넣어준다.
+for _ in range(k):
+  y, x = map(int, input().split())
+  adj[x][y] = 1
 
-print(SequentialSearch(len(array), target, array))
+def dfs(x, y):
+  if x <= -1 or x >= n or y <= -1 or y >= m:
+    return False
+  if adj[x][y] == 1:
+    adj[x][y] == 0
+    dfs(x-1, y)
+    dfs(x, y-1)
+    dfs(x+1, y)
+    dfs(x, y+1)
+    return True
+  return False
+
+result = 0
+for i in range(m):
+  for j in range(n):
+    if dfs(i, j) == True:
+      result += 1
+print(result)

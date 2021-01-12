@@ -3,5 +3,15 @@
 
 정렬 알고리즘, 탐색 알고리즘, BFS,DFS 등을 다룰 예정이고, SW마에스트로 코딩 테스트를 대비하면서 공부한 것입니다.
 
+§ 그래프 탐색 알고리즘(BFS,DFS): [BFS 탐색 알고리즘](https://hangjastar.tistory.com/131), [DFS 탐색 알고리즘](https://hangjastar.tistory.com/130)
+
+§ 정렬 알고리즘: [선택 정렬], [삽입 정렬], [퀵 정렬], [병합 정렬], [계수 정렬]
+
+§ 탐색 알고리즘: [순차 탐색], [이진 탐색]
+
+§ 탐욕 알고리즘:
+
+$ 백준 문제풀이: 문제 번호에 맞게 코드를 작성해놓았습니다. 주석을 상세하게 작성하지는 않아서 참고만 해주시면 될 것 같습니다.
+
 자세한 사항은 블로그에 정리해두었고, 아래 링크로 가시면 확인할 수 있습니다.
-https://hangjastar.tistory.com/category/Algorithm
+[개발 블로그 알고리즘 카테고리 바로가기](https://hangjastar.tistory.com/category/Algorithm)
