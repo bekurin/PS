@@ -1,3 +1,4 @@
+# 백준 11004번 수 정렬하기(병합 정렬)
 def MergeSort(array):
   if len(array) <= 1:
     return array

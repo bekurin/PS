@@ -1,4 +1,4 @@
-# 백준 2606번 바이러스 문제
+# 백준 2606번 바이러스 문제(DFS)
 n = int(input())
 m = int(input())
 adj = [[] for _ in range(n+1)]
