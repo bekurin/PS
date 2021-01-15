@@ -5,11 +5,13 @@
 
 § 그래프 탐색 알고리즘(BFS,DFS): [BFS 탐색 알고리즘](https://hangjastar.tistory.com/131), [DFS 탐색 알고리즘](https://hangjastar.tistory.com/130)
 
-§ 정렬 알고리즘: [선택 정렬], [삽입 정렬], [퀵 정렬], [병합 정렬], [계수 정렬]
+§ 정렬 알고리즘: [선택 정렬](https://hangjastar.tistory.com/125?category=951912), [삽입 정렬](https://hangjastar.tistory.com/126?category=951912), [퀵 정렬](https://hangjastar.tistory.com/127?category=951912), [병합 정렬](https://hangjastar.tistory.com/132?category=951912), [계수 정렬](https://hangjastar.tistory.com/128?category=951912)
 
-§ 탐색 알고리즘: [순차 탐색], [이진 탐색]
+§ 탐색 알고리즘: [순차 탐색](https://hangjastar.tistory.com/133?category=951912), [이진 탐색](https://hangjastar.tistory.com/134?category=951912)
 
-§ 탐욕 알고리즘:
+§ [탐욕 알고리즘](https://hangjastar.tistory.com/135?category=951912)
+
+§ [다이나믹 프로그래밍](https://hangjastar.tistory.com/136?category=951912)
 
 $ 백준 문제풀이: 문제 번호에 맞게 코드를 작성해놓았습니다. 주석을 상세하게 작성하지는 않아서 참고만 해주시면 될 것 같습니다.
 
