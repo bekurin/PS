@@ -1,3 +1,5 @@
+# 백준 12865번 평범한 배낭
+# 절대 평범하지 않음
 n, k = map(int, input().split())
 weight = [0]
 value = [0]
