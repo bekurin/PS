@@ -14,7 +14,3 @@ def solution(N, stages):
   answer = sorted(answer, key = lambda x: x[1], reverse = True)
   answer = [i[0] for i in answer]
   return answer
-
-n = 5
-stages = [2,1,2,6,2,4,3,3]
-print(solution(n, stages))
