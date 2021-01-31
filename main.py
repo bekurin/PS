@@ -6,7 +6,7 @@ count = 1
 while len(data) <= 1000:
   for i in range(count):
     data.append(count)
-  count += 1
+  count += 2
 
 data = data[(a-1):b]
 
