@@ -1,3 +1,4 @@
+# baekjoon No.1149 RGB 거리
 n = int(input())
 cost = []
 
