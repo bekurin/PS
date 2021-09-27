@@ -1,3 +1,4 @@
+# 백준 No.3020 개똥벌레
 n, h = map(int, input().split(' '))
 
 data = []
