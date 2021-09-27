@@ -13,5 +13,4 @@
 
 - [다이나믹 프로그래밍](https://hangjastar.tistory.com/136?category=951912)
 
-자세한 사항은 블로그에 정리해두었고, 아래 링크로 가시면 확인할 수 있습니다.
-[개발 블로그 알고리즘 카테고리 바로가기](https://hangjastar.tistory.com/category/Algorithm)
+더 자세한 내용에 대해서는 다음의 링크를 참고해주시기 바랍니다. [개발 블로그](https://hangjastar.tistory.com/category/Algorithm)
