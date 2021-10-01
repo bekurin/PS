@@ -24,7 +24,7 @@ n, m, h = map(int, input().split(' '))
 data = []
 queue = deque()
 answer, count = 0, 0
-isRun = True
+isExist0 = True
 
 for _ in range(h):
   temp = []
@@ -36,39 +36,24 @@ for _ in range(h):
 visited = []
 for _ in range(h):
   visited.append([[False] * n for _ in range(m)])
-  
-# n, m, h = 5, 3, 1
-# answer, count = 0, 0
-# isRun = True
-# data = [[[0, -1, 0, 0, 0], [-1, -1, 0, 1, 1], [0, 0, 0, 1, 1]]]
 
-# visited = []
-# for _ in range(h):
-#   visited.append([[False] * n for _ in range(m)])
 
 for z in range(h):
   for y in range(m):
-    count += data[z][y].count(0)
-
-if count == 0:
-  print(0)
-else:
-  for z in range(h):
-    for y in range(m):
-      for x in range(n):
-        if data[z][y][x] == 1:
-          visited[z][y][x] = True
-          queue.append((x, y, z))
+    for x in range(n):
+      if data[z][y][x] == 1:
+        visited[z][y][x] = True
+        queue.append((x, y, z))
 bfs()
 
 for z in range(h):
   for y in range(m):
     for x in range(n):
       if data[z][y][x] == 0:
-        isRun = False
+        isExist0 = False
       answer = max(answer, data[z][y][x])
 
-if isRun:
+if isExist0:
   print(answer-1)
 else:
   print(-1)

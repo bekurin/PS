@@ -18,13 +18,13 @@ for number in data:
     count += 1
     bottom[h-number+1] += 1
 
-for i in range(h-1, 0, -1):
+for i in range(h - 1, 0, -1):
   top[i] += top[i + 1]
 
-for i in range(1, h+1):
+for i in range(1, h + 1):
   bottom[i] += bottom[i-1]
 
-for i in range(1, h+1):
+for i in range(1, h + 1):
   answer[i] = top[i] + bottom[i]
 
 answer = answer[1:]
