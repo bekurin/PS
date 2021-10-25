@@ -1,74 +1,19 @@
-# 백준 No.7569 토마토
-from collections import deque
+# 프로그래머스 no.42747 H-index
 
-def bfs():
-  dx = [-1, 0, 1, 0, 0, 0]
-  dy = [0, -1, 0, 1, 0, 0]
-  dz = [0, 0, 0, 0, -1, 1]
+def solution(citations):
+  citations.sort()
+  answer = 0
 
-  while queue:
-    x, y, z = queue.popleft()
+  for i in range(len(citations)):
+    for j in range(i+1, len(citations)):
+      if citations[i] <= citations[j]:
+        count = len(citations) - j + 1
+        break
+    if count == citations[i]:
+      answer = count
 
-    for i in range(6):
-      nx = x + dx[i]
-      ny = y + dy[i]
-      nz = z + dz[i]
+  return answer
 
-      if nx < n and nx >= 0 and ny < m and ny >= 0 and nz < h and nz >= 0:
-        if not visited[nz][ny][nx] and data[nz][ny][nx] == 0:
-          queue.append((nx,ny,nz))
-          data[nz][ny][nx] = data[z][y][x] + 1
-          visited[nz][ny][nx] = True
 
-n, m, h = map(int, input().split(' '))
-data = []
-queue = deque()
-answer, count = 0, 0
-isRun = True
-
-for _ in range(h):
-  temp = []
-  for _ in range(m):
-    line = list(map(int, input().split(' ')))
-    temp.append(line)
-  data.append(temp)
-
-visited = []
-for _ in range(h):
-  visited.append([[False] * n for _ in range(m)])
-  
-# n, m, h = 5, 3, 1
-# answer, count = 0, 0
-# isRun = True
-# data = [[[0, -1, 0, 0, 0], [-1, -1, 0, 1, 1], [0, 0, 0, 1, 1]]]
-
-# visited = []
-# for _ in range(h):
-#   visited.append([[False] * n for _ in range(m)])
-
-for z in range(h):
-  for y in range(m):
-    count += data[z][y].count(0)
-
-if count == 0:
-  print(0)
-else:
-  for z in range(h):
-    for y in range(m):
-      for x in range(n):
-        if data[z][y][x] == 1:
-          visited[z][y][x] = True
-          queue.append((x, y, z))
-bfs()
-
-for z in range(h):
-  for y in range(m):
-    for x in range(n):
-      if data[z][y][x] == 0:
-        isRun = False
-      answer = max(answer, data[z][y][x])
-
-if isRun:
-  print(answer-1)
-else:
-  print(-1)
+testCase = [3, 0, 6, 1, 5]	
+print(solution(testCase))
