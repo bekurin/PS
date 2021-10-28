@@ -1,5 +1,4 @@
 # 프로그래머스 no.42842 카펫
-
 def solution(brown, yellow):
   answer = []
   ab = brown + yellow
