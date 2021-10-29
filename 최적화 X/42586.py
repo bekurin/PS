@@ -9,17 +9,16 @@ def solution(progresses, speeds):
     days.append(math.ceil((100-progress)/speeds[index]))
     index += 1
   
-  index = 0
   while(position < len(days)):
     count = 0
-    day = days[index]
+    day = days[position]
+    
     for i in range(position, len(days)):
       if day >= days[position]:
         position += 1
         count += 1
       else:
         break
-    index = position
     answer.append(count)
   return answer
 
