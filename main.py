@@ -1,28 +1,11 @@
-# 프로그래머스 no.42586 기능개발
-import math
+# 프로그래머스 no.72411 메뉴 리뉴얼
 
-def solution(progresses, speeds):
-  answer, days = [], []
-  index, position, count = 0, 0, 0
-
-  for progress in progresses:
-    days.append(math.ceil((100-progress)/speeds[index]))
-    index += 1
-  
-  index = 0
-  while(position < len(days)):
-    count = 0
-    day = days[index]
-    for i in range(position, len(days)):
-      if day >= days[position]:
-        position += 1
-        count += 1
-      else:
-        break
-    index = position
-    answer.append(count)
+def solution(orders, course):
+  answer = []
   return answer
 
-progresses = [93,30,55]
-speeds = [1, 30 ,5]
-print(solution(progresses, speeds))
+
+orders = ["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"]
+course = [2,3,4]
+
+print(solution(orders, course))
