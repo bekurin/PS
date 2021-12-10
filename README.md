@@ -6,14 +6,10 @@
 
 ### 알고리즘
 
-- 그래프 탐색 알고리즘(BFS,DFS): [BFS 탐색 알고리즘](https://hangjastar.tistory.com/131), [DFS 탐색 알고리즘](https://hangjastar.tistory.com/130)
-
 - 정렬 알고리즘: [선택 정렬](https://hangjastar.tistory.com/125?category=951912), [삽입 정렬](https://hangjastar.tistory.com/126?category=951912), [퀵 정렬](https://hangjastar.tistory.com/127?category=951912), [병합 정렬](https://hangjastar.tistory.com/132?category=951912), [계수 정렬](https://hangjastar.tistory.com/128?category=951912)
-
 - 탐색 알고리즘: [순차 탐색](https://hangjastar.tistory.com/133?category=951912), [이진 탐색](https://hangjastar.tistory.com/134?category=951912)
-
+- 그래프 탐색 알고리즘(BFS,DFS): [BFS 탐색 알고리즘](https://hangjastar.tistory.com/131), [DFS 탐색 알고리즘](https://hangjastar.tistory.com/130), [다익스트라 알고리즘](https://hangjastar.tistory.com/137?category=951912)
 - [탐욕 알고리즘](https://hangjastar.tistory.com/135?category=951912)
-
 - [다이나믹 프로그래밍](https://hangjastar.tistory.com/136?category=951912)
 
 ### 자료구조
