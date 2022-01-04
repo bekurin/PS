@@ -1,5 +1,4 @@
 # 프로그래머스 No.42576 완주하지 못한 선수
-
 """
 1. participant, completion 이름순으로 정렬한다.
 2. participant와 completion을 순서대로 확인하며 이름이 다른 부분이 있는지 확인한다.
