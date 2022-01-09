@@ -48,7 +48,7 @@ while True:
 
   if n == 0 and m == 0:
     break
-
+    
   for _ in range(m):
     data.append(list(map(int, input().split())))
 
