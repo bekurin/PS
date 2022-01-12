@@ -10,31 +10,31 @@ category: 구현?
 7. 2의 과정을 반복한다.
 """
 
-def getGrid(rows, columns):
+def get_grid(rows, columns):
   grid = []
   for row in range(rows):
     grid.append([column + (row * columns) for column in range(1, columns + 1)])
   return grid
 
-def rotateWest(x1, y1, x2, y2, grid, mini):
+def rotate_west(x1, y1, x2, y2, grid, mini):
   for i in range(x1 - 1, x2 - 1):
     grid[i][y1-1] = grid[i+1][y1-1]
     mini = min(mini, grid[i+1][y1-1])
   return mini
 
-def rotateSouth(x1, y1, x2, y2, grid, mini):
+def rotate_south(x1, y1, x2, y2, grid, mini):
   for i in range(y1 - 1, y2 - 1):
     grid[x2-1][i] = grid[x2-1][i+1]
     mini = min(mini, grid[x2-1][i+1])
   return mini
 
-def rotateEast(x1, y1, x2, y2, grid, mini):
+def rotate_east(x1, y1, x2, y2, grid, mini):
   for i in range(x2 - 1, x1 - 1, -1):
     grid[i][y2-1] = grid[i-1][y2-1]
     mini = min(mini, grid[i-1][y2-1])
   return mini
 
-def rotateNorth(x1, y1, x2, y2, grid, mini):
+def rotate_north(x1, y1, x2, y2, grid, mini):
   for i in range(y2 - 1, y1 - 1, -1):
     grid[x1-1][i] = grid[x1-1][i-1]
     mini = min(mini, grid[x1-1][i-1])
@@ -42,21 +42,20 @@ def rotateNorth(x1, y1, x2, y2, grid, mini):
 
 def solution(rows, columns, queries):
   answer = []
-  grid = getGrid(rows, columns)
+  grid = get_grid(rows, columns)
 
   for x1, y1, x2, y2 in queries:
     temp = grid[x1-1][y1-1]
     mini = temp
     
-    mini = rotateWest(x1, y1, x2, y2, grid, mini)
-    mini = rotateSouth(x1, y1, x2, y2, grid, mini)
-    mini = rotateEast(x1, y1, x2, y2, grid, mini)
-    mini = rotateNorth(x1, y1, x2, y2, grid, mini)
+    mini = rotate_west(x1, y1, x2, y2, grid, mini)
+    mini = rotate_south(x1, y1, x2, y2, grid, mini)
+    mini = rotate_east(x1, y1, x2, y2, grid, mini)
+    mini = rotate_north(x1, y1, x2, y2, grid, mini)
 
     grid[x1-1][y1] = temp
     answer.append(mini)
   return answer
-
 
 rows = 6
 columns = 6
