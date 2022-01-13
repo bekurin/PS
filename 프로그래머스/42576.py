@@ -15,6 +15,22 @@ def solution(participant, completion):
       return participant[i]
   return participant[len(participant)-1]
 
+def solution_dict(participant, completion):
+  answer = []
+  player_dict = {}
+
+  for player in participant:
+    if player in player_dict:
+      player_dict[player] += 1
+    else:
+      player_dict[player] = 1
+
+  for player in completion:
+    player_dict[player] -= 1
+
+  answer = [player for player, count in player_dict.items() if count != 0]
+  return answer[0]
+
 participant = ["leo", "kiki", "eden"]
 completion = ["eden", "kiki"]
 print(solution(participant, completion))
