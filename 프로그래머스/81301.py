@@ -1,5 +1,14 @@
 # 프로그래머스 No.81301 숫자 문자열과 영단어
 
+"""
+dictionary
+1. 주어진 문자를 순환하며 숫자인지 판별한다.
+2. 숫자라면 answer에 현재 문자를 더해준다.
+3. 숫자가 아니라면 temp에 현재 문자를 더해준다.
+4. 숫자 문자열과 영단어 dictionary에 temp 값이 있는지 확인한다.
+5. 4가 참이라면 dictionary의 value 값을 answer에 더해준다.
+6. 4가 거짓이라면 1을 반복한다.
+"""
 def solution(s):
   answer = ""
   number_dict = {"zero": "0", "one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9"}
