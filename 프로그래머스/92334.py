@@ -7,7 +7,7 @@
 
 def solution(id_list, report, k):
   report = [item.split() for item in list(set(report))]
-  reported_dict = {id:0 for id in id_list}
+  answer_dict = {id:0 for id in id_list}
   report_dict = {id:[] for id in id_list}
 
   for reporter, target in report:
@@ -16,9 +16,9 @@ def solution(id_list, report, k):
   for key in report_dict.keys():
     if len(report_dict[key]) >= k:
       for value in report_dict[key]:
-        reported_dict[value] += 1
+        answer_dict[value] += 1
   
-  return list(reported_dict.values())
+  return list(answer_dict.values())
 
 id_list = ["muzi", "frodo", "apeach", "neo"]
 report = ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"]
