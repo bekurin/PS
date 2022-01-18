@@ -1,25 +1,33 @@
-# 프로그래머스 No.12977 소수 만들기
-def is_prime(num):
-  if num <= 2:
-    return False if num == 1 else True
+# 백준 No.1759 암호 만들기
+import sys
+from itertools import combinations
+"""
+조합, 브루트 포스
+1. alpha의 모든 경우의 수를 combi_list에 저장한다.
+2. combi_list의 combi를 순환하며 모음과 자음의 개수를 세어준다.
+3. 모음이 1개 이상 자음이 2개 이상 존재하며 answer에 combi를 저장한다.
+4. answer를 순환하며 정답을 출력한다.
+"""
+def solution(l, c, alpha):
+  answer = []
+  combi_list = list(combinations(alpha, l))
 
-  for i in range(2, num // 2 + 1):
-    if num % i == 0:
-      return False
-  return True
-
-def solution(nums):
-  answer = 0
-  numbers = []
-  for i, num in enumerate(nums):
-    for j in range(i+1, len(nums)):
-      for k in range(j+1, len(nums)):
-        numbers.append(nums[i] + nums[j] + nums[k])
-
-  for number in numbers:
-    if is_prime(number):
-      answer += 1
+  for combi in combi_list:
+    vowel, consonant = 0, 0
+    for s in combi:
+      if s in ['a', 'e', 'i', 'o', 'u']:
+        vowel += 1
+      else:
+        consonant += 1
+      if vowel > 0 and consonant > 1:
+        answer.append(''.join(combi))
+        break
   return answer
 
-nums = [1,2,7,6,4]
-print(solution(nums))
+l, c = map(int, sys.stdin.readline().split())
+alpha = sorted(list(sys.stdin.readline().split()))
+# l, c = 4, 6
+# alpha = ['a', 't', 'c', 'i', 's', 'w']
+
+for item in solution(l, c, alpha):
+  print(item)

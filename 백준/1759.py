@@ -1,37 +1,33 @@
-# baekjoon No.1759 암호 만들기
-# l, c = map(int, input().split(' '))
+# 백준 No.1759 암호 만들기
+import sys
+from itertools import combinations
+"""
+조합, 브루트 포스
+1. alpha의 모든 경우의 수를 combi_list에 저장한다.
+2. combi_list의 combi를 순환하며 모음과 자음의 개수를 세어준다.
+3. 모음이 1개 이상 자음이 2개 이상 존재하며 answer에 combi를 저장한다.
+4. answer를 순환하며 정답을 출력한다.
+"""
+def solution(l, c, alpha):
+  answer = []
+  combi_list = list(combinations(alpha, l))
 
-# data_type = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7, 'i': 8, 'j': 9, 'k': 10, 'l': 11, 'm': 12, 'n': 13, 'o': 14, 'p': 15, 'q': 16, 'r': 17, 's': 18, 't': 19, 'u': 20, 'v': 21, 'w': 22, 'x': 23, 'y': 24, 'z': 25}
-
-# data = list(input().split(' '))
-
-l, c = 4, 6
-
-data_type = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7, 'i': 8, 'j': 9, 'k': 10, 'l': 11, 'm': 12, 'n': 13, 'o': 14, 'p': 15, 'q': 16, 'r': 17, 's': 18, 't': 19, 'u': 20, 'v': 21, 'w': 22, 'x': 23, 'y': 24, 'z': 25}
-
-data = ['a', 't', 'c', 'i', 's', 'w']
-numeric_data = {}
-for item in data:
-  if data_type.get(item) is not None:
-    temp = data_type.get(item)
-    numeric_data[temp] = item
-
-numeric_data.sort()
-temp_str = ''
-answer = []
-
-for item in data:
-  temp_str = ''
-  while len(temp_str) < 4:
-    for i in range(c):
-      for j in range(i+1, c):
-        if numeric_data[i] > numeric_data[j]:
-          continue
-        print(temp_str)
-        temp_str += 'a'
+  for combi in combi_list:
+    vowel, consonant = 0, 0
+    for s in combi:
+      if s in ['a', 'e', 'i', 'o', 'u']:
+        vowel += 1
+      else:
+        consonant += 1
+      if vowel > 0 and consonant > 1:
+        answer.append(''.join(combi))
         break
+  return answer
 
+l, c = map(int, sys.stdin.readline().split())
+alpha = sorted(list(sys.stdin.readline().split()))
+# l, c = 4, 6
+# alpha = ['a', 't', 'c', 'i', 's', 'w']
 
-
-print(answer)
-print(numeric_data)
+for item in solution(l, c, alpha):
+  print(item)
