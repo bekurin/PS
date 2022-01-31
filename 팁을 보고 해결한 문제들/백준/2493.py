@@ -2,8 +2,7 @@
 """
 stack
 앞에서부터 차례로 순환하면 stack에 저장한다. 이때, 현재 tower의 값보다 큰 값이 stack에 저장되어 있다면 stack을 비워주고 answer의 값을 초기화해준다.
-
-높은 건물이 찾아지면 이전 건물들에 대한 비교는 무의미하다. 
+* 높은 건물이 찾아지면 이전 건물들에 대한 비교는 무의미하다. 
 """
 import sys
 input = sys.stdin.readline
@@ -27,6 +26,9 @@ for i, tower in enumerate(tower_list):
 
 print(" ".join(list(map(str,answer))))
 
+"""
+뒤에서부터 차례로 순환하여 n * (n + 1) / 2번의 비교를 수행한다. 현재 비교를 수행하는 tower만을 stack에서 지워준다.
+"""
 # my_solution
 stack = [6, 9, 5, 7, 4]
 answer = [0] * n
