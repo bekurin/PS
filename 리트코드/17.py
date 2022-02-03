@@ -1,7 +1,9 @@
-# 리트코드 No.17 Letter Combinations of a Phone Number 
 """
 백트레킹
-모든 문자에 대하여 문자 단위로 재귀 탐색을 실시한다.
+모든 문자에 대하여 문자 단위로 재귀 탐색을 실시한다. 
+1. digits의 값 자릿수 단위 반복
+2. digit에 해당하는 모든 문자열 반복
+3. dfs(index, path)를 재귀 호출
 """
 class Solution:
     def letterCombinations(self, digits: str) -> list:
