@@ -1,4 +1,8 @@
 # 백준 No.6603 로또
+"""
+조합, 백트레킹
+(6 - len(numbers)) - 1 <= (len(number_list) - (index + 1)) 조건을 사용하여 골라야할 숫자의 개수와 남아 있는 숫자의 개수를 비교하여 dfs() 함수를 재귀로 호출해도 되는지 여부를 판단한다.
+"""
 import sys
 input = sys.stdin.readline
 
