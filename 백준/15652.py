@@ -1,5 +1,7 @@
 # 백준 No.15652 N과 M(4)
-
+"""
+백트래킹, 깊이 우선 탐색
+"""
 def dfs(index, number_list, numbers):
   if len(numbers) == m:
     for number in numbers:
