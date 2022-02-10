@@ -1,4 +1,7 @@
 # 백준 No.2583 영역 구하기
+"""
+그래프 이론, 그래프 탐색, 너비 우선 탐색
+"""
 import sys
 from collections import deque
 
