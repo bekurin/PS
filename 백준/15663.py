@@ -1,4 +1,7 @@
-# 백준 No.15663 N과 M(9)
+# 백준 No.15663 N과 M(9) 
+"""
+백트래킹
+"""
 import sys
 input = sys.stdin.readline
 
