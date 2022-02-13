@@ -1,4 +1,7 @@
 # 백준 No.2805 나무 자르기
+"""
+이분 탐색, 매개 변수 탐색
+"""
 import sys
 input = sys.stdin.readline
 
