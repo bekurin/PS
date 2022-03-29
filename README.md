@@ -13,6 +13,7 @@
 - [다이나믹 프로그래밍](https://hangjastar.tistory.com/136?category=951912)
 
 ### 자료구조
+- [배열](https://hangjastar.tistory.com/268)
 - 스택
 - 연결 리스트
 - 큐
