@@ -21,4 +21,3 @@ def solution(clothes):
 
 clothes = [["crow_mask", "face"], ["blue_sunglasses", "face"], ["smoky_makeup", "face"], ["yellowhat", "headgear"], ["bluesunglasses", "eyewear"], ["green_turban", "headgear"]]
 print(solution(clothes))
-    
