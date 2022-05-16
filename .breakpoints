@@ -4,20 +4,26 @@
       {
         "id": "a989c43e-d258-44fd-947b-00696cf6063f",
         "line": 1,
-        "version": 1,
+        "version": 5396,
         "index": 0
       },
       {
         "id": "e37ea682-26f9-408e-8cb6-55b263e20b89",
         "line": 1,
-        "version": 1,
+        "version": 5396,
         "index": 0
       },
       {
         "id": "324aa778-ad2e-44ac-aa8d-a0eeb38324ac",
         "line": 1,
-        "version": 1,
+        "version": 5396,
         "index": 0
+      },
+      {
+        "id": "d4374f29-4369-4996-95ab-a5bee8737b92",
+        "line": 26,
+        "version": 5396,
+        "index": 823
       }
     ],
     "백준/6593.py": [
