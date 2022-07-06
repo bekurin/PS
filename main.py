@@ -1,17 +1,28 @@
-# 백준 No.1822 차집합
-def solution(set_a, set_b):
-    set_a = set(set_a)
-    set_b = set(set_b)
-    return set_a - set_b
+# 백준 No.1806 부분합
+def solution(n, s, numbers):
+    target = sum(numbers)
 
-a, b = map(int, input().split())
-set_a = list(map(int, input().split()))
-set_b = list(map(int, input().split()))
+    if target == s:
+        return n
+    elif target < s:
+        return 0
+    elif target > s:
+        return two_pointer(n, s, numbers)
 
-answer = solution(set_a, set_b)
-count = len(answer)
 
-print(count)
-if count:
-    for item in sorted(answer):
-        print(item, end=" ")
+def two_pointer(n, s, numbers):
+    answer = 1000000001
+    total, right = 0, 0
+    for left in range(n):
+        while total < s and right < n:
+            total += numbers[right]
+            right += 1
+        if total >= s:
+            answer = min(answer, right - left)
+        total -= numbers[left]
+    return answer
+
+
+n, s = map(int, input().split())
+numbers = list(map(int, input().split()))
+print(solution(n, s, numbers))
