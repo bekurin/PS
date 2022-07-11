@@ -14,9 +14,9 @@
 
 ### 자료구조
 - [배열](https://hangjastar.tistory.com/268)
-- 스택
-- 연결 리스트
-- 큐
+- [스택](https://righteous.tistory.com/4)
+- [연결 리스트](https://righteous.tistory.com/14)
+- [큐](https://righteous.tistory.com/5)
 - 트리
 - 우선순위 큐
 - 테이블과 해쉬
