@@ -7,12 +7,11 @@ def solution(skill, skill_trees):
 
     for available in available_skill_trees:
         answer += candidate_list.count(available)
-    answer += candidate_list.count("")
     return answer
 
 
 def get_available_skill_tress(skill):
-    available = []
+    available = [""]
     for idx in range(len(skill)):
         available.append(skill[:idx + 1])
     return available
