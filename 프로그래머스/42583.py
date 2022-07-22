@@ -1,9 +1,8 @@
 # 프로그래머스 No.42583 다리를 지나는 트럭
 
-
 def solution(bridge_length, weight, truck_weights):
-    answer, current_weight = 1, 0
     queue = []
+    answer, current_weight = 0, 0
 
     while truck_weights:
         if current_weight + truck_weights[0] <= weight:
@@ -15,7 +14,6 @@ def solution(bridge_length, weight, truck_weights):
             time, truck = queue.pop(0)
             current_weight -= truck
             answer = max(answer, time + bridge_length)
-    answer -= 1
     return answer if not queue else answer + bridge_length
 
 
