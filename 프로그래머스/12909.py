@@ -3,6 +3,8 @@
 def solution(s):
     if len(s) % 2 != 0 or s[0] == ')':
         return False
+    elif s.count('(') != s.count(')'):
+        return False
     else:
         return is_right_pattern(list(s))
 
