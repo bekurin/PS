@@ -2,10 +2,10 @@
 
 def solution(gems):
     answer, n = [1, len(gems)], len(set(gems))
-    gem_dict = get_default_gem_dict(gems)
+    gem_dict = {}
 
-    left, right = 0, 1
-    while left < right:
+    left, right = 0, 0
+    while left <= right:
         if len(gem_dict) == n:
             gem_dict = remove_by(gem_dict, gems[left])
             left += 1
@@ -38,10 +38,6 @@ def min_answer(answer, candidate):
     if answer[1] - answer[0] > candidate[1] - candidate[0]:
         return candidate
     return answer
-
-
-def get_default_gem_dict(gems):
-    return {gems[0]: 1}
 
 
 gems = ["A", "A", "B"]
