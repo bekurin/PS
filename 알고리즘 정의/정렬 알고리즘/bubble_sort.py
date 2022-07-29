@@ -11,4 +11,5 @@ def bubble_sort(array):
 
 array = list(range(21))
 random.shuffle()
-print(bubble_sort(array))
+print('origin list: {}'.format(array))
+print('result list: {}'.format(bubble_sort(array)))
