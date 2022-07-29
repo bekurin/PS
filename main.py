@@ -1,17 +1,15 @@
 import random
 
 
-def selection_sort(array):
+def bubble_sort(array):
     for i in range(len(array) - 1):
-        min_index = i
-        for j in range(i + 1, len(array)):
-            if array[j] < array[min_index]:
-                min_index = j
-        array[i], array[min_index] = array[min_index], array[i]
+        for j in range(i, len(array)):
+            if array[i] > array[j]:
+                array[i], array[j] = array[j], array[i]
     return array
 
 
-array = list(range(11))
+array = list(range(21))
 random.shuffle(array)
 print('origin list: {}'.format(array))
-print('result list: {}'.format(selection_sort(array)))
+print('result list: {}'.format(bubble_sort(array)))
