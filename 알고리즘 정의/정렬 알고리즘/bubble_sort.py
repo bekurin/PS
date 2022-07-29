@@ -1,13 +1,14 @@
 import random
 
-def bubble_sort(number_list):
-    for i in range(len(number_list)):
-        for j in range(i, len(number_list)):
-            if number_list[i] < number_list[j]:
-                number_list[i], number_list[j] = number_list[j], number_list[i]
-    return number_list
+
+def bubble_sort(array):
+    for i in range(len(array)):
+        for j in range(i, len(array)):
+            if array[i] < array[j]:
+                array[i], array[j] = array[j], array[i]
+    return array
 
 
-number_list = list(range(21))
+array = list(range(21))
 random.shuffle()
-print(bubble_sort(bubble_sort(number_list)))
+print(bubble_sort(array))
