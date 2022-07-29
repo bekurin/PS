@@ -1,10 +1,17 @@
-# 프로그래머스 No.87390 n^2 배열 자르기
+import random
 
-def solution(n, left, right):
-    answer = []
-    for idx in range(left, right + 1):
-        answer.append(max(divmod(idx, n)) + 1)
-    return answer
+def bubble_sort(number_list):
+    for i in range(len(number_list)):
+        for j in range(1, len(number_list) - i):
+            if number_list[j-1] > number_list[j]:
+                number_list[j-1], number_list[j] = number_list[j], number_list[j-1]
+        print('step.{:2} list: {}'.format(i, number_list))
+    return number_list
 
-n, left, right = 3, 2, 5
-print(solution(n, left, right))
+
+number_list = list(range(11))
+random.shuffle(number_list)
+print('origin list: {}'.format(number_list))
+
+result = bubble_sort(number_list)
+print('result list: {}'.format(result))
