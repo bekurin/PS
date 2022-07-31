@@ -2,11 +2,11 @@ import random
 
 
 def hx(key):
-    return key % 29
+    return key % 619
 
 
 def fx(key):
-    return 1 + key % 23
+    return 1 + key % 251
 
 
 def hash_insert(hash_table, value):
@@ -32,10 +32,10 @@ def hash_search(hash_table, value):
     return None
 
 
-hash_size = 30
+hash_size = 619
 hash_table = [0 for _ in range(hash_size)]
 
-array = list(range(3, 93, 3))
+array = list(range(3, 1000, 3))
 random.shuffle(array)
 
 print('input list : {}'.format(array))
@@ -44,7 +44,7 @@ for item in array:
     hash_table[index] = item
 print('after input: {}'.format(hash_table))
 
-array.reverse()
+random.shuffle(array)
 print('search list: {}'.format(array))
 for item in array:
     index = hash_search(hash_table, item)
