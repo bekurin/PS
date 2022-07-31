@@ -1,14 +1,12 @@
 import random
 
-hash_table = [0 for _ in range(13)]
-
 
 def hx(key):
-    return key % 13
+    return key % 29
 
 
 def fx(key):
-    return 1 + key % 11
+    return 1 + key % 23
 
 
 def hash_insert(hash_table, value):
@@ -16,13 +14,9 @@ def hash_insert(hash_table, value):
     index, fx_result, hx_result = 0, fx(value), hx(value)
 
     while index != size:
-        temp = (hx_result + index * fx_result)
-        if temp < size:
-            if hash_table[temp] == 0:
-                return temp
-        else:
-            if hash_table[temp % size] == 0:
-                return temp % size
+        temp = (hx_result + index * fx_result) % size
+        if hash_table[temp] == 0:
+            return temp
         index += 1
     return None
 
@@ -30,21 +24,20 @@ def hash_insert(hash_table, value):
 def hash_search(hash_table, value):
     size = len(hash_table)
     index, fx_result, hx_result = 0, fx(value), hx(value)
-
     while index != size:
-        temp = (hx_result + index * fx_result)
-        if temp < size:
-            if hash_table[temp] == value:
-                return temp
-        else:
-            if hash_table[temp % size] == value:
-                return temp % size
+        temp = (hx_result + index * fx_result) % size
+        if hash_table[temp] == value:
+            return temp
         index += 1
     return None
 
 
-array = list(range(3, 40, 3))
+hash_size = 30
+hash_table = [0 for _ in range(hash_size)]
+
+array = list(range(3, 93, 3))
 random.shuffle(array)
+
 print('input list : {}'.format(array))
 for item in array:
     index = hash_insert(hash_table, item)
