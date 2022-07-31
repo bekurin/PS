@@ -23,7 +23,7 @@ def loop_binary_search(array, target, left, right):
     return -1
 
 
-array = list(range(2, 200, 10))
+array = list(range(21))
 target = array[8]
 print('origin list: {}'.format(array))
 print('recursion target: {}, index = {}'.format(target, recursion_binary_search(array, target, 0, len(array))))
