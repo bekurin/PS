@@ -14,9 +14,7 @@ def get_init_result_dict(couple_type):
 def solution(survey, choices):
     result_dict = get_init_result_dict(couple_type)
     for i, item in enumerate(survey):
-        result_dict = set_result_dict_by(result_dict,
-                                         get_char(choices[i], item),
-                                         score_list[choices[i] - 1])
+        result_dict[get_char(choices[i], item)] += score_list[choices[i] - 1]
     return get_answer_by(result_dict)
 
 
@@ -29,11 +27,6 @@ def get_answer_by(result_dict):
     for front, end in couple_type:
         answer += front if result_dict[front] > result_dict[end] or result_dict[front] == result_dict[end] else end
     return answer
-
-
-def set_result_dict_by(result_dict, char, score):
-    result_dict[char] += score
-    return result_dict
 
 
 survey = ["AN", "CF", "MJ", "RT", "NA"]

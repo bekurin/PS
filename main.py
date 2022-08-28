@@ -1,37 +1,34 @@
-# 프로그래머스 No.17681 [1차] 비밀지도
+# 프로그래머스 No.118666 성격 유형 검사하기
 
-def get_binary_list(number, n):
-    base = ''
-    while number > 0:
-        number, mode = divmod(number, 2)
-        base += str(mode)
-
-    if len(base) < n:
-        base += '0' * (n - len(base))
-    return list(base[::-1])
+score_list = [3, 2, 1, 0, 1, 2, 3]
+couple_type = (('R', 'T'), ('C', 'F'), ('J', 'M'), ('A', 'N'))
 
 
-def solution(n, arr1, arr2):
-    answer = []
-    arr1_map_list = get_map_list(n, arr1)
-    arr2_map_list = get_map_list(n, arr2)
+def get_init_result_dict(couple_type):
+    result_dict = {}
+    for front, end in couple_type:
+        result_dict[front], result_dict[end] = 0, 0
+    return result_dict
 
-    for x in range(n):
-        temp = ''
-        for y in range(n):
-            temp += '#' if arr1_map_list[x][y] or arr2_map_list[x][y] else ' '
-        answer.append(temp)
+
+def solution(survey, choices):
+    result_dict = get_init_result_dict(couple_type)
+    for i, item in enumerate(survey):
+        result_dict[get_char(choices[i], item)] += score_list[choices[i] - 1]
+    return get_answer_by(result_dict)
+
+
+def get_char(choice, item):
+    return item[0] if choice < 4 else item[1]
+
+
+def get_answer_by(result_dict):
+    answer = ''
+    for front, end in couple_type:
+        answer += front if result_dict[front] > result_dict[end] or result_dict[front] == result_dict[end] else end
     return answer
 
 
-def get_map_list(n, array):
-    map_list = []
-    for number in array:
-        map_list.append(list(map(int, get_binary_list(number, n))))
-    return map_list
-
-
-n = 5
-arr1 = [9, 20, 28, 18, 11]
-arr2 = [30, 1, 21, 17, 28]
-print(solution(n, arr1, arr2))
+survey = ["AN", "CF", "MJ", "RT", "NA"]
+choices = [5, 3, 2, 7, 5]
+print(solution(survey, choices))
