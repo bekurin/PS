@@ -4,7 +4,7 @@ score_list = [3, 2, 1, 0, 1, 2, 3]
 couple_type = (('R', 'T'), ('C', 'F'), ('J', 'M'), ('A', 'N'))
 
 
-def get_init_result_dict(couple_type):
+def get_init_result_dict():
     result_dict = {}
     for front, end in couple_type:
         result_dict[front], result_dict[end] = 0, 0
@@ -12,7 +12,7 @@ def get_init_result_dict(couple_type):
 
 
 def solution(survey, choices):
-    result_dict = get_init_result_dict(couple_type)
+    result_dict = get_init_result_dict()
     for i, item in enumerate(survey):
         result_dict[get_char(choices[i], item)] += score_list[choices[i] - 1]
     return get_answer_by(result_dict)
