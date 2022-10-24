@@ -1,7 +1,11 @@
 package 프로그래머스
 
 // 프로그래머스 No.131127 할인 행사
-fun solution(want: Array<String>, number: IntArray, discount: Array<String>): Int {
+fun solution(
+    want: Array<String>,
+    number: IntArray,
+    discount: Array<String>
+): Int {
     var answer: Int = 0
     val duration = number.sum()
     val lastDay = discount.size
@@ -26,11 +30,17 @@ private fun getBasketAsMap(
     return basket
 }
 
-private fun getIntRangeBy(startDay: Int, duration: Int, lastDay: Int): IntRange {
+private fun getIntRangeBy(
+    startDay: Int,
+    duration: Int,
+    lastDay: Int
+): IntRange {
     return IntRange(startDay, (if (startDay + duration < lastDay) startDay + duration else lastDay) - 1)
 }
 
-private fun getItemCounterAsMapBy(itemList: List<String>): MutableMap<String, Int> {
+private fun getItemCounterAsMapBy(
+    itemList: List<String>
+): MutableMap<String, Int> {
     val counter = mutableMapOf<String, Int>()
     for (element in itemList) {
         counter[element] = counter[element]?.plus(1) ?: 1
@@ -38,13 +48,15 @@ private fun getItemCounterAsMapBy(itemList: List<String>): MutableMap<String, In
     return counter
 }
 
-private fun isValidCounter(counter: MutableMap<String, Int>, wantMap: MutableMap<String, Int>): Boolean {
+private fun isValidCounter(
+    counter: MutableMap<String, Int>,
+    wantMap: MutableMap<String, Int>
+): Boolean {
     for (element in wantMap.keys) {
         if ((counter[element] ?: 0) < wantMap[element]!!) return false
     }
     return true
 }
-
 
 fun main() {
     val want = arrayOf("banana", "apple", "rice", "pork", "pot")
