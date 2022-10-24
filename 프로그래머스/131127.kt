@@ -50,10 +50,10 @@ private fun getItemCounterAsMapBy(
 
 private fun isValidCounter(
     counter: MutableMap<String, Int>,
-    wantMap: MutableMap<String, Int>
+    basket: MutableMap<String, Int>
 ): Boolean {
-    for (element in wantMap.keys) {
-        if ((counter[element] ?: 0) < wantMap[element]!!) return false
+    for (element in basket.keys) {
+        if ((counter[element] ?: 0) < basket[element]!!) return false
     }
     return true
 }
