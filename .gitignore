@@ -1,3 +1,6 @@
 /out
 .idea
 PS.iml
+.replit
+replit.nix
+venv/**

@@ -75,5 +75,6 @@ def solution(maps):
     answer.append(priority_queue.get())
   return answer
 
+
 maps = ["X591X", "X1X5X", "X231X", "1XXX1"]
 print(solution(maps))
