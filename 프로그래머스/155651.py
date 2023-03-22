@@ -7,9 +7,15 @@ def get_hour_to_minutes(time):
   return hour * 60 + minute
 
 
-def fill_reservation_time_to(rooms, reservation_time):
+def get_resevation_time_with_cleaning_time(reservation_time):
   start, end = reservation_time
-  for idx in range(start, end + 10 if end + 10 < minute_for_one_day else end):
+  end = end + 10 if end + 10 < minute_for_one_day else end
+  return (start, end)
+
+
+def fill_reservation_time_to(rooms, reservation_time):
+  start, end = get_resevation_time_with_cleaning_time(reservation_time)
+  for idx in range(start, end):
     rooms[idx] += 1
   return rooms
 
