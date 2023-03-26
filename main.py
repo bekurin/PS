@@ -1,65 +1,33 @@
-# 프로그래머스 No.150370 개인정보 수집 유효기간
-def convert_date_to_number(date, separator="."):
-  return map(int, date.split(separator))
+# 프로그래머스 No.150369 택배 배달과 수거하기
 
+# 차가 실을 수 있는 최고 택배 개수 cap
+# 몇번을 왔다갔다 해야하나? 수거 택배, 배달 택배 중 총합이 많은 택배에서 (택백 / cap) 나누어 떨어지지 않는다면 +1
+# 또는 반복문을 돌며 수거와 배달 택배의 총합을 계산하여 수거, 배달의 총합이 가장 많게 유지하면 배달을 시작한다. (그리디)
+from collections import deque
 
-def get_term_dict(terms):
-  term_dict = {}
-  for term in terms:
-    key, duration = term.split(" ")
-    term_dict[key] = duration
-  return term_dict
+def solution(cap, n, deliveries, pickups):
+  answer = -1
+  packages = list(zip(deliveries, pickups))
 
+  queue = deque()
+  delivery, pickup = 0, 0
+  for idx, (package) in enumerate(packages):
+    distance = idx + 1
+    n_delivery, n_pickup = package
+    n_delivery = delivery + n_delivery
+    n_pickup = pickup + n_pickup
 
-def get_inroll_date_and_term_duration(privacy, term_dict):
-  inroll_date, term = privacy.split(" ")
-  return inroll_date, term_dict[term]
-
-
-def get_privacy_expire_date(inroll_date, duration):
-  year, month, day = convert_date_to_number(inroll_date)
-  month = month + duration
-
-  if (month % 12 == 0):
-    expire_year = year + (month // 12) - 1
-    expire_month = 12
-    return "{}.{}.{}".format(expire_year, expire_month, day)
-
-  expire_year = year + (month // 12)
-  expire_month = month % 12
-  return "{}.{}.{}".format(expire_year, expire_month, day)
-
-
-def is_expired(today, expire_date):
-  t_year, t_month, t_day = convert_date_to_number(today)
-  e_year, e_month, e_day = convert_date_to_number(expire_date)
-
-  if (t_year > e_year):
-    return True
-
-  if ((t_year == e_year) and (t_month > e_month)):
-    return True
-
-  if ((t_year == e_year) and (t_month == e_month) and (t_day >= e_day)):
-    return True
-  return False
-
-
-def solution(today, terms, privacies):
-  answer = []
-  year, month, day = today.split(".")
-  term_dict = get_term_dict(terms)
-
-  for idx, privacy in enumerate(privacies):
-    inroll_date, duration = get_inroll_date_and_term_duration(
-      privacy, term_dict)
-    expire_date = get_privacy_expire_date(inroll_date, int(duration))
-    if (is_expired(today, expire_date)):
-      answer.append(idx + 1)
+    delivery = n_delivery
+    pickup = n_pickup
+    if n_delivery >= cap or n_pickup >= cap:
+      queue.append((distance, n_delivery, n_pickup))
+      delivery, pickup = 0, 0
+     
+  print(list(queue))
   return answer
 
-
-print(
-  solution("2022.05.19", ["A 6", "B 12", "C 3"],
-           ["2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"]))
-print(solution("2021.12.08", ["A 18"], ["2020.06.08 A"]))
+print(solution(
+  4, 5, 
+  [1, 0, 3, 1, 2],
+  [0, 3, 0, 4, 0]
+))
