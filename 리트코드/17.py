@@ -25,6 +25,29 @@ class Solution:
             return []
         dfs(0, "")
         return answer
+"""
+한번 더 풀어서
+"""
 
-solution = Solution()
-print(solution.letterCombinations("234"))
+import itertools
+
+class Solution:
+    _digit_to_letters = {
+        "2": "abc",
+        "3": "def",
+        "4": "ghi",
+        "5": "jkl",
+        "6": "mno",
+        "7": "pqrs",
+        "8": "tuv",
+        "9": "wxyz"
+    }
+
+    def letterCombinations(self, digits: str) -> List[str]:
+        if not digits:
+            return []
+
+        letters = [list(self._digit_to_letters[d]) for d in digits]
+
+        combinations = [''.join(p) for p in itertools.product(*letters)]
+        return combinations
